@@ -1,0 +1,28 @@
+https://code.visualstudio.com/docs/cpp/config-mingw
+Create tasks.json in .vscode folder and fill it in sith json below:
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "type": "shell",
+        "label": "NAME OF PROGRAM",
+        "command": "C:\\Program Files\\mingw-w64\\x86_64-8.1.0-win32-seh-rt_v6-rev0\\mingw64\\bin\\g++.exe",
+		"args": ["-g", "${workspaceFolder}\\*.cpp", "-o", "${fileDirname}\\NAME OF EXECUTABLE.exe"],
+		,
+        "options": {
+          "cwd": "${workspaceFolder}"
+        },
+        "problemMatcher": ["$gcc"],
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        }
+      }
+    ]
+  }
+  
+Label can be changed.
+If you want to hardcode .exe file name just type it instead of ${fileBasenameNoExtension}.exe
+Select main.cpp file in VSCode
+Click Terminal > Run Build Task
+Click Terminal > Run Task and select the task that is named like your label in tasks.json
