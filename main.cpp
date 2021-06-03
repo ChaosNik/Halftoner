@@ -100,14 +100,6 @@ int main()
         new_pixels.push_back(new_row2);
         new_pixels.push_back(new_row3);
     }
-
-    for(auto row : new_pixels)
-    {
-        //std::cout << row.size();
-        //for(auto pix : row)
-        //    std::cout << "(" << pix.red << ", " << pix.green << ", " << pix.blue << ")";
-        //std::cout << std::endl;
-    }
     
     Bitmap output;
     output.fromPixelMatrix(new_pixels);
